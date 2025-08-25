@@ -7,14 +7,13 @@ function downloadCV() {
   document.body.removeChild(link);
 }
 
-
 function toggleDarkMode() {
       document.body.classList.toggle("dark");
       const btn = document.querySelector(".toggle-btn");
       if (document.body.classList.contains("dark")) {
-        btn.textContent = "☀️ Mode Terang";
+        btn.textContent = "☀️ Light Mode";
       } else {
-        btn.textContent = "🌙 Mode Gelap";
+        btn.textContent = "🌙 Dark Mode";
       }
     }
 
@@ -22,20 +21,19 @@ function toggleDarkMode() {
     const text2 = "Pengembang front-end yang menulis kode yang bersih, elegan, dan efisien..";
     let i = 0, j = 0;
 
-    function ketikan() {
+    function typeFirst() {
       if (i < text1.length) {
-        document.getElementById("ketik1").textContent += text1.charAt(i);
+        document.getElementById("typing1").textContent += text1.charAt(i);
         i++;
         setTimeout(typeFirst, 50);
       } 
 
       if (j < text2.length) {
-        document.getElementById("ketik2").textContent += text2.charAt(j);
+        document.getElementById("typing2").textContent += text2.charAt(j);
         j++;
         setTimeout(typeSecond, 50);
       } 
     }
 
 
-    window.onload = ketikan;
-
+    window.onload = typeFirst;
