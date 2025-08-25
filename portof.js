@@ -1,9 +1,12 @@
-    function downloadCV() {
-      const link = document.createElement("a");
-      link.href = "CV_Muhammad_Subkha.pdf"; 
-      link.download = "CV_Muhammad_Subkha.pdf"; 
-      link.click(); 
-    }
+function downloadCV() {
+  const link = document.createElement("a");
+  link.href = "CV_Muhammad_Subkha.pdf"; 
+  link.download = "CV_Muhammad_Subkha.pdf"; 
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
+
 
 function toggleDarkMode() {
       document.body.classList.toggle("dark");
