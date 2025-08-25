@@ -1,3 +1,10 @@
+    function downloadCV() {
+      const link = document.createElement("a");
+      link.href = "CV_Muhammad_Subkha.pdf"; 
+      link.download = "CV_Muhammad_Subkha.pdf"; 
+      link.click(); 
+    }
+
 function toggleDarkMode() {
       document.body.classList.toggle("dark");
       const btn = document.querySelector(".toggle-btn");
@@ -28,3 +35,4 @@ function toggleDarkMode() {
 
 
     window.onload = ketikan;
+
