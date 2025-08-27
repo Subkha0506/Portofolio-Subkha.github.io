@@ -420,6 +420,7 @@ hr {
   letter-spacing: 2px;
   color: #777;
   margin-bottom: 30px;
+  text-align: center;
 }
 
 .work-container {
@@ -433,7 +434,8 @@ hr {
 
 .work-card {
   background: #fff;
-  width: 320px;
+  width: 350px;
+  height: 400px;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
   text-align: left;
@@ -443,15 +445,18 @@ hr {
 }
 
 .work-card img {
-  width: 100%;
-  border-radius: 8px;
-  margin-bottom: 15px;
+  width: 300px;        
+  height: 300px;       
+  object-fit: contain; 
+  display: block;      
+  margin: 0 auto 15px;
 }
 
 .work-card h3 {
   font-size: 16px;
   color: #333;
   margin-bottom: 5px;
+  text-align: center;
 }
 
 .work-card p {
