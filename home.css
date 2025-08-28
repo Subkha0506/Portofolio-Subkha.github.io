@@ -9,12 +9,14 @@
 
 body {
   margin: 0;
-    font-family: 'poppins', sans-serif;
-    background: #ffffff;
-    color: #333333;
-    transition: background 0.5s, color 0.5s;
-    scroll-behavior: smooth;
+  font-family: 'Poppins', sans-serif;
+  background: #ffffff;
+  color: #333333;
+  transition: background 0.5s, color 0.5s;
+  scroll-behavior: smooth;
+  padding-top: 70px; 
 }
+
 
 
 
@@ -96,7 +98,11 @@ body.dark .contact-info strong {
 header {
   background: #000;
   box-shadow: 0 2px 5px rgba(0,0,0,0.5);
-  position: sticky;
+  position: fixed; 
+  top: 0;          
+  left: 0;
+  width: 100%;      
+  z-index: 9999;    
 }
 
 .navbar {
@@ -106,7 +112,6 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 15px 20px;
-  position: sticky;
 }
 
 .toggle-btn {
