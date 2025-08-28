@@ -53,6 +53,7 @@ function downloadCV() {
 
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("contact-form");
+  const commentsList = document.getElementById("comments-list");
 
   if (form) {
     form.addEventListener("submit", function (event) {
@@ -62,6 +63,15 @@ document.addEventListener("DOMContentLoaded", function () {
         .sendForm("SubkhaAgency_05", "template_jd3qqrj", this)
         .then(
           () => {
+            const name = form.querySelector("[name='user_name']").value;
+            const message = form.querySelector("[name='message']").value;
+
+            if (commentsList) {
+              const li = document.createElement("li");
+              li.innerHTML = `<strong>${name}</strong>: ${message}`;
+              commentsList.appendChild(li);
+            }
+
             alert("✅ Pesan berhasil dikirim!");
             form.reset();
           },
@@ -72,4 +82,5 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
 
