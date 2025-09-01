@@ -264,10 +264,25 @@ body.dark .toggle-btn {
   border-radius: 50%;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease;
+  opacity: 0;
+  transform: translateY(40px) scale(0.9);
+  animation: orangFadeIn 1.2s ease-out forwards;
+  animation-delay: 0.3s;
 }
 
 .orang-image img:hover {
   transform: scale(1.05); 
+}
+
+@keyframes orangFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 @media (max-width: 768px) {
