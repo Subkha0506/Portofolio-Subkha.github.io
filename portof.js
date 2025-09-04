@@ -56,8 +56,8 @@ function downloadCV() {
   btn.textContent = "⏳ Mengunduh...";
 
   const link = document.createElement("a");
-  link.href = "CV_Muhammad_Subkha.pdf"; 
-  link.download = "CV_Muhammad_Subkha.pdf"; 
+  link.href = "CV_Subkha.pdf"; 
+  link.download = "CV_Subkha.pdf"; 
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
