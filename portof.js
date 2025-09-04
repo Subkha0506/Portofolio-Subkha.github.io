@@ -1,3 +1,24 @@
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll('.nav-links a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      const targetId = this.getAttribute("href");
+      const targetElement = document.querySelector(targetId);
+
+      if (targetElement) {
+        const navbarHeight = document.querySelector(".navbar").offsetHeight;
+
+        window.scrollTo({
+          top: targetElement.offsetTop - navbarHeight,
+          behavior: "smooth"
+        });
+      }
+    });
+  });
+});
+
+
 function toggleDarkMode() {
   document.body.classList.toggle("dark");
   const btn = document.querySelector(".toggle-btn");
