@@ -517,6 +517,21 @@ hr {
     right: 15px;
     padding: 8px;
   }
+  
+  /* Timeline - Ultra compact for very small screens */
+  .timeline::after {
+    left: 20px;
+  }
+
+  .timeline-item {
+    padding-left: 50px;
+    padding-right: 10px;
+  }
+
+  .timeline-item::after,
+  .timeline-item.right::after {
+    left: 8px;
+  }
 }
 
 /* Landscape orientation adjustments */
