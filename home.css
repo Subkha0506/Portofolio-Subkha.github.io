@@ -544,8 +544,15 @@ h1 {
 .card-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 40px; 
+  gap: 40px;
   justify-items: center;
+}
+
+@media (max-width: 768px) {
+  .card-container {
+    grid-template-columns: 1fr; 
+    gap: 20px;
+  }
 }
 
 
@@ -1218,3 +1225,23 @@ background: linear-gradient(135deg, #ede7f6, #b39ddb);
   background: #e0a800;
 }
 
+@media (max-width: 480px) {
+  .porg {
+    font-size: 28px; 
+  }
+
+  .orang-section {
+    padding: 60px 20px; 
+  }
+
+  .skill-card {
+    width: 100%;      
+    max-width: 280px; 
+    padding: 20px;    
+  }
+
+  .work-card img {
+    width: 100%;        
+    height: auto;
+  }
+}
