@@ -329,11 +329,17 @@ body.dark .toggle-btn {
   background: #e2b645;
 }
 
-.container {
-  max-width: 800px;
-  margin: 40px auto;
-  padding: 0 20px;
+.about-section,
+.timeline-section,
+.work-section,
+.contact-section {
+  max-width: 100% !important;
+  width: 100%;
+  margin: 0 auto;
+  padding-left: 40px;
+  padding-right: 40px;
 }
+
 
 h1 {
   font-size: 2.5rem;
