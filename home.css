@@ -384,7 +384,8 @@ hr {
   .footer-right {
     align-items: center;
   }
-}
+} 
+
 
 @media (max-width: 480px) {
   body {
@@ -543,16 +544,19 @@ hr {
     color: black !important;
   }
   
- .card-wrapper,
-.biodata-card,
-.deskripsi-card,
-.skill-card,
-.work-card {
-  box-shadow: none;
-  border: 1px solid #ddd;
-  border-radius: clamp(1.5vw, 2vw, 15px); 
-  z-index: 1000;
-}
+  .card-wrapper,
+  .biodata-card,
+  .deskripsi-card,
+  .skill-card,
+  .work-card {
+    box-shadow: none;
+    border: 1px solid #ddd;
+    border-radius: clamp(1.5vw, 2vw, 15px); 
+    z-index: 1000;
+  }
+} 
+
+
 
 
 body.dark .toggle-btn {
