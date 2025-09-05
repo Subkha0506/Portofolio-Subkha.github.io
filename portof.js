@@ -34,20 +34,26 @@ const text2 = "Pengembang front-end yang menulis kode yang bersih, elegan, dan e
 let i = 0, j = 0;
 
 function typeFirst() {
-    if (i < text1.length) {
-      document.getElementById("typing1").textContent += text1.charAt(i);
-      i++;
-      setTimeout(typeFirst, 50);
-    
+  if (i < text1.length) {
+    document.getElementById("typing1").textContent += text1.charAt(i);
+    i++;
+    setTimeout(typeFirst, 50);
+  }
 
-    if (j < text2.length) {
-      document.getElementById("typing2").textContent += text2.charAt(j);
-      j++;
-      setTimeout(typeSecond, 50);
-    }
+  if (j < text2.length) {
+    document.getElementById("typing2").textContent += text2.charAt(j);
+    j++;
+    setTimeout(typeSecond, 50);
   }
 }
 
+function typeSecond() {
+  if (j < text2.length) {
+    document.getElementById("typing2").textContent += text2.charAt(j);
+    j++;
+    setTimeout(typeSecond, 50);
+  }
+}
 
 window.onload = typeFirst;
 
@@ -65,9 +71,45 @@ function downloadCV() {
   setTimeout(() => {
     btn.textContent = "✅ CV Terunduh";
   }, 2000);
+} 
+
+const carousel = document.getElementById('carousel');
+const prev = document.querySelector('.prev');
+const next = document.querySelector('.next');
+
+let index = 0;
+const totalCards = carousel.children.length;
+ 
+function updateCarousel() {
+  const containerWidth = carousel.parentElement.offsetWidth;
+  const card = carousel.children[index];  
+  const cardWidth = card.offsetWidth;
+
+  const cardLeft = card.offsetLeft;
+
+  const translateX = -(cardLeft - (containerWidth - cardWidth) / 2);
+
+  carousel.style.transform = `translateX(${translateX}px)`;
 }
 
 
+next.addEventListener('click', (e) => {
+  e.preventDefault();
+  index = (index + 1) % totalCards;
+  updateCarousel();
+});
+
+prev.addEventListener('click', (e) => {
+  e.preventDefault();
+  index = (index - 1 + totalCards) % totalCards;
+  updateCarousel();
+});
+
+window.addEventListener('resize', updateCarousel);
+window.addEventListener('load', updateCarousel);
+
+
+ 
 (function () {
   emailjs.init("5tbFljVGNqVbkQTE1");
 })();
@@ -103,5 +145,3 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
-
-
