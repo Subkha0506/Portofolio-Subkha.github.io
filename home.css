@@ -1045,6 +1045,28 @@ h1 {
   line-height: 1.6;
 }
 
+@media (max-width: 768px) {
+  .timeline::after {
+    left: 20px; 
+  }
+
+  .timeline-item {
+    width: 100%;
+    padding-left: 50px;
+    padding-right: 25px;
+    left: 0 !important; 
+  }
+
+  .timeline-item.right {
+    left: 0; 
+  }
+
+  .timeline-item::after {
+    left: 10px; 
+    right: auto;
+  }
+}
+
 .contact-section {
   background: linear-gradient(135deg, #ffdde1, #f8cdd0, #fad0c4, #fbc2eb);
   padding: clamp(50px, 8vw, 80px) clamp(5%, 5vw, 10%);
