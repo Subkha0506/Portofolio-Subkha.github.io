@@ -46,7 +46,7 @@ function typeBoth() {
   }
 
   if (i < text1.length || j < text2.length) {
-    setTimeout(typeBoth, 80); 
+    setTimeout(typeBoth, 50); 
   }
 }
 
