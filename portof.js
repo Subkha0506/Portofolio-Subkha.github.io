@@ -31,31 +31,27 @@ function toggleDarkMode() {
 
 const text1 = "Perancang desain antarmuka pengguna (UI) dan sistem desain.";
 const text2 = "Pengembang front-end yang menulis kode yang bersih, elegan, dan efisien.";
+
 let i = 0, j = 0;
 
-function typeFirst() {
+function typeBoth() {
   if (i < text1.length) {
     document.getElementById("typing1").textContent += text1.charAt(i);
     i++;
-    setTimeout(typeFirst, 50);
   }
 
   if (j < text2.length) {
     document.getElementById("typing2").textContent += text2.charAt(j);
     j++;
-    setTimeout(typeSecond, 50);
+  }
+
+  if (i < text1.length || j < text2.length) {
+    setTimeout(typeBoth, 80); 
   }
 }
 
-function typeSecond() {
-  if (j < text2.length) {
-    document.getElementById("typing2").textContent += text2.charAt(j);
-    j++;
-    setTimeout(typeSecond, 50);
-  }
-}
+window.onload = typeBoth;
 
-window.onload = typeFirst;
 
 function downloadCV() {
   const btn = document.querySelector(".start-button");
