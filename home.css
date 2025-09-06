@@ -1321,6 +1321,17 @@ body.dark .card p {
   opacity: 0.9;
 }
 
+.linkedin {
+  background: #0077b5;   
+  align-items: center;
+  justify-content: center;
+}
+
+.linkedin:hover {
+  background: #005582;   
+}
+
+
 .contact-right {
   flex: 1;
   display: flex;
