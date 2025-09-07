@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll('.nav-links a[href^="#"]').forEach(anchor => {
+  document.querySelectorAll('.nav-links a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       e.preventDefault();
 
@@ -11,13 +11,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         window.scrollTo({
           top: targetElement.offsetTop - navbarHeight,
-          behavior: "smooth"
+          behavior: "smooth",
         });
       }
     });
   });
 });
-
 
 function toggleDarkMode() {
   document.body.classList.toggle("dark");
@@ -30,9 +29,11 @@ function toggleDarkMode() {
 }
 
 const text1 = "Perancang desain antarmuka pengguna (UI) dan sistem desain.";
-const text2 = "Pengembang front-end yang menulis kode yang bersih, elegan, dan efisien.";
+const text2 =
+  "Pengembang front-end yang menulis kode yang bersih, elegan, dan efisien.";
 
-let i = 0, j = 0;
+let i = 0,
+  j = 0;
 
 function typeBoth() {
   if (i < text1.length) {
@@ -46,20 +47,19 @@ function typeBoth() {
   }
 
   if (i < text1.length || j < text2.length) {
-    setTimeout(typeBoth, 50); 
+    setTimeout(typeBoth, 50);
   }
 }
 
 window.onload = typeBoth;
-
 
 function downloadCV() {
   const btn = document.querySelector(".start-button");
   btn.textContent = "⏳ Mengunduh...";
 
   const link = document.createElement("a");
-  link.href = "CV_Subkha.pdf"; 
-  link.download = "CV_Subkha.pdf"; 
+  link.href = "CV_Subkha.pdf";
+  link.download = "CV_Subkha.pdf";
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
@@ -67,18 +67,18 @@ function downloadCV() {
   setTimeout(() => {
     btn.textContent = "✅ CV Terunduh";
   }, 2000);
-} 
+}
 
-const carousel = document.getElementById('carousel');
-const prev = document.querySelector('.prev');
-const next = document.querySelector('.next');
+const carousel = document.getElementById("carousel");
+const prev = document.querySelector(".prev");
+const next = document.querySelector(".next");
 
 let index = 0;
 const totalCards = carousel.children.length;
- 
+
 function updateCarousel() {
   const containerWidth = carousel.parentElement.offsetWidth;
-  const card = carousel.children[index];  
+  const card = carousel.children[index];
   const cardWidth = card.offsetWidth;
 
   const cardLeft = card.offsetLeft;
@@ -88,24 +88,21 @@ function updateCarousel() {
   carousel.style.transform = `translateX(${translateX}px)`;
 }
 
-
-next.addEventListener('click', (e) => {
+next.addEventListener("click", (e) => {
   e.preventDefault();
   index = (index + 1) % totalCards;
   updateCarousel();
 });
 
-prev.addEventListener('click', (e) => {
+prev.addEventListener("click", (e) => {
   e.preventDefault();
   index = (index - 1 + totalCards) % totalCards;
   updateCarousel();
 });
 
-window.addEventListener('resize', updateCarousel);
-window.addEventListener('load', updateCarousel);
+window.addEventListener("resize", updateCarousel);
+window.addEventListener("load", updateCarousel);
 
-
- 
 (function () {
   emailjs.init("5tbFljVGNqVbkQTE1");
 })();
@@ -118,26 +115,24 @@ document.addEventListener("DOMContentLoaded", function () {
     form.addEventListener("submit", function (event) {
       event.preventDefault();
 
-      emailjs
-        .sendForm("SubkhaAgency_05", "template_jd3qqrj", this)
-        .then(
-          () => {
-            const name = form.querySelector("[name='user_name']").value;
-            const message = form.querySelector("[name='message']").value;
+      emailjs.sendForm("SubkhaAgency_05", "template_jd3qqrj", this).then(
+        () => {
+          const name = form.querySelector("[name='user_name']").value;
+          const message = form.querySelector("[name='message']").value;
 
-            if (commentsList) {
-              const li = document.createElement("li");
-              li.innerHTML = `<strong>${name}</strong>: ${message}`;
-              commentsList.appendChild(li);
-            }
-
-            alert("✅ Pesan berhasil dikirim!");
-            form.reset();
-          },
-          (error) => {
-            alert("❌ Gagal mengirim pesan: " + JSON.stringify(error));
+          if (commentsList) {
+            const li = document.createElement("li");
+            li.innerHTML = `<strong>${name}</strong>: ${message}`;
+            commentsList.appendChild(li);
           }
-        );
+
+          alert("✅ Pesan berhasil dikirim!");
+          form.reset();
+        },
+        (error) => {
+          alert("❌ Gagal mengirim pesan: " + JSON.stringify(error));
+        }
+      );
     });
   }
 });
