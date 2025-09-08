@@ -17,7 +17,7 @@ body {
   font-size: clamp(16px, 2vw, 20px);
 }
 
-.fade-in-up {
+.fade-in-up { 
   opacity: 0;
   transform: translateY(40px);
   transition: all 0.8s ease-out;
@@ -1339,6 +1339,17 @@ body.dark .card p {
   align-items: center;
   justify-content: center;
 }
+
+.github {
+  background: #333; 
+  align-items: center;
+  justify-content: center;
+}
+
+.github:hover {
+  background: #24292e;  
+}
+
 
 .linkedin:hover {
   background: #005582;
