@@ -1206,6 +1206,19 @@ body.dark .card p {
   }
 }
 
+.map-section {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.map-container {
+  max-width: 900px;
+  margin: 20px auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+}
+
 .contact-section {
   background: linear-gradient(135deg, #ffdde1, #f8cdd0, #fad0c4, #fbc2eb);
   padding: clamp(50px, 8vw, 80px) clamp(5%, 5vw, 10%);
